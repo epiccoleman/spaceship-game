@@ -1,3 +1,11 @@
+var appellations = ["dude", "man", "bro", "brotha", "homie", "dawg", "yo", "homes", "ese"];
+var spaceManText = document.getElementById("spaceManText");
+
+function spaceMan(){
+  spaceManText.innerHTML = "You're in space, " + appellations[Math.floor(Math.random()*appellations.length)] + ".";
+}
+spaceMan();
+
 var myShip =  { crew: [{name: "Eric"}],
                 engine: { type: "shitty", charge: 1, speed: 10 },
                 gun: { type: "crappy", chargeCapacity: 1, damage: 10, accuracy: .5 },
@@ -23,6 +31,7 @@ function update(trigger){
   positionText.innerHTML = "Your position is: " + myShip.position.x + ", " + myShip.position.y;
   moveXDistanceBox.value = 0;
   moveYDistanceBox.value = 0;
+  spaceMan();
 }
 
 moveXButton.addEventListener('click', update);
